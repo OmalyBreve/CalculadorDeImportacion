@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "276062097724",
+    "project_id": "calculadordeimportacion-5be7f",
+    "storage_bucket": "calculadordeimportacion-5be7f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276062097724:android:d59f52cddf2158bb710e39",
+        "android_client_info": {
+          "package_name": "com.example.calculadordeimportacion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276062097724-q3nto9qcj75g5e35si7kgff7bsl1top1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.calculadordeimportacion",
+            "certificate_hash": "34ebf45416c5d8d818c189e4ad8c8bc132a579eb"
+          }
+        },
+        {
+          "client_id": "276062097724-kpbu2s6j5vnjqm7ft8pb16fpnmk1fb51.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvvqutfBUbz7FF-NRkxf6YD_Nf0Y2SjGo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276062097724-kpbu2s6j5vnjqm7ft8pb16fpnmk1fb51.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
