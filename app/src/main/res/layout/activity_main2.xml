@@ -11,6 +11,7 @@
         android:id="@+id/btnCerrarSesion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_700"
         android:text="Cerrar Sesion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,10 +44,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
+        app:layout_constraintHorizontal_bias="0.198"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.124" />
 
     <Button
         android:id="@+id/button3"
@@ -60,5 +61,5 @@
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.102" />
+        app:layout_constraintVertical_bias="0.124" />
 </androidx.constraintlayout.widget.ConstraintLayout>

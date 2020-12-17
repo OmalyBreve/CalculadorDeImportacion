@@ -28,6 +28,7 @@
         android:id="@+id/google_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_700"
         android:onClick="btnIr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
