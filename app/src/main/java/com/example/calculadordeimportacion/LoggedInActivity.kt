@@ -1,5 +1,6 @@
 package com.example.calculadordeimportacion
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -11,9 +12,10 @@ class LoggedInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_logged_in)
 
+
         auth= FirebaseAuth.getInstance()
-        btnCerrarSesion.setOnClickListener{
-            finish()
-        }
+        //btnCerrarSesion.setOnClickListener{
+            //finish()
+       // }
     }
 }

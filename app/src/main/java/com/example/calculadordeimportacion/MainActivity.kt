@@ -3,6 +3,8 @@ package com.example.calculadordeimportacion
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -18,8 +20,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private lateinit var signInOptions : GoogleSignInOptions
-    private lateinit var signInClient : GoogleSignInClient
+    private lateinit var signInOptions: GoogleSignInOptions
+    private lateinit var signInClient: GoogleSignInClient
     val RC_SIGN_IN: Int = 1
 
 
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        auth= FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
         initializeUI()
         setupGoogleLogin()
 
@@ -38,13 +40,13 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         val usuario = FirebaseAuth.getInstance().currentUser
         if (usuario != null) {
-            val intent = Intent(this, LoggedInActivity::class.java)
+            val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
             //finish()
         }
     }
 
-    private fun setupGoogleLogin(){
+    private fun setupGoogleLogin() {
         signInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -53,28 +55,28 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun initializeUI(){
-        google_button.setOnClickListener{
+    private fun initializeUI() {
+        google_button.setOnClickListener {
             login()
         }
     }
 
-    private fun login(){
-        val loginIntent: Intent =signInClient.signInIntent
+    private fun login() {
+        val loginIntent: Intent = signInClient.signInIntent
         startActivityForResult(loginIntent, RC_SIGN_IN)
     }
 
-    override  fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?){
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(requestCode == RC_SIGN_IN){
+        if (requestCode == RC_SIGN_IN) {
             val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
-            try{
+            try {
                 val account = task.getResult(ApiException::class.java)
-                if(account != null){
+                if (account != null) {
                     googleFirebaseAuth(account)
                 }
 
-            }catch (e: ApiException){
+            } catch (e: ApiException) {
                 Toast.makeText(this, "Fallo inicio de sesioon", Toast.LENGTH_LONG).show()
 
 
@@ -82,15 +84,20 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun googleFirebaseAuth(acct: GoogleSignInAccount){
+    private fun googleFirebaseAuth(acct: GoogleSignInAccount) {
         val credenciales = GoogleAuthProvider.getCredential(acct.idToken, null)
-        auth.signInWithCredential(credenciales).addOnCompleteListener{
-            if(it.isSuccessful){
-                val intent = Intent(this, LoggedInActivity::class.java)
+        auth.signInWithCredential(credenciales).addOnCompleteListener {
+            if (it.isSuccessful) {
+                val intent = Intent(this, MainActivity2::class.java)
                 startActivity(intent)
-            }else{
+            } else {
                 Toast.makeText(this, "Fallo inicio de sesion", Toast.LENGTH_LONG).show()
             }
         }
     }
+
+    fun btnIr(view: View) {}
+
+
 }
+
